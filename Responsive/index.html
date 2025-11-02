@@ -2,88 +2,118 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Ejemplo responsivo con carrusel de texto</title>
-  <!-- CSS de Bootstrap -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-    }
-    #texto-carrusel {
-      color: #fff;
-      background-color: #2c3e50;
-      padding: 12px 20px;
-      border-radius: 4px;
-      display: inline-block;
-    }
-    .contenido {
-      margin-top: 30px;
-    }
-    .texto-col {
-      background-color: #f0f4f8;
-      padding: 15px;
-      margin-bottom: 20px;
-      border-radius: 4px;
-    }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejercicio responsive</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 </head>
 <body>
+  <!-- Barra de navegación principal -->
+  <nav class="navbar navbar-expand-lg bg-secondary">
+    <div class="container-fluid barraNavegacion">
+      <a class="navbar-brand text-white fw-semibold" href="#">LIPSUM SITE</a>
 
-  <!-- Navbar responsivo -->
-  <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">LOREM IPSUM</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNav" aria-controls="menuNav" aria-expanded="false" aria-label="Menú de navegación">
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false" aria-label="Mostrar menú">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="menuNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="#">Dolor</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Sit</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Amet</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Otro</a></li>
+
+      <div class="collapse navbar-collapse" id="menuPrincipal">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 order-1 order-lg-1">
+          <li class="nav-item mx-4">
+            <a class="nav-link active text-white" aria-current="page" href="#">Inicio</a>
+          </li>
+          <li class="nav-item mx-4">
+            <a class="nav-link text-white-50" href="#">Servicios</a>
+          </li>
+          <li class="nav-item mx-4">
+            <a class="nav-link text-white-50" href="#">Contacto</a>
+          </li>
+          <li class="nav-item mx-4 d-lg-none">
+            <a class="nav-link text-white-50" id="botonOpciones" href="#">Opciones</a>
+          </li>
         </ul>
+
+        <form class="d-flex order-0 order-lg-2" role="search">
+          <input class="form-control me-2" type="search" placeholder="Buscar..." aria-label="Buscar">
+        </form>
       </div>
     </div>
   </nav>
 
-  <div class="container contenido">
-    <!-- Carrusel de texto centrado -->
-    <div class="d-flex justify-content-center mb-4">
-      <h2 id="texto-carrusel">Texto inicial</h2>
-    </div>
-
-    <!-- Grilla de contenido tipo columnas -->
-    <div class="row">
-      <div class="col-12 col-md-6 texto-col">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum mollis, tortor ac congue commodo, nisi neque bibendum elit, quis vulputate dolor augue ut mauris.</p>
-        <p>Fusce vitae enim et tellus lacinia condimentum eu at massa. Nullam laoreet, elit quis hendrerit maximus, ante sem congue lorem.</p>
-      </div>
-      <div class="col-12 col-md-6 texto-col">
-        <p>Phasellus eleifend semper tempor. Quisque mi lorem, laoreet eu urna sit amet, tempor volutpat est. Vestibulum lobortis nulla vel odio laoreet.</p>
-        <p>Mauris mattis porttitor erat, in pharetra risus fringilla lobortis. Vestibulum et ante commodo, imperdiet neque ac, tempus felis.</p>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-12 col-md-6 texto-col">
-        <p>In mi velit, fringilla sed velit vel, ornare varius dui. Nunc viverra diam sit amet mollis posuere. Nullam semper odio in consectetur ornare.</p>
-      </div>
-      <div class="col-12 col-md-6 texto-col">
-        <p>Proin suscipit orci mi, ut hendrerit mi molestie nec. Donec efficitur risus erat, eu auctor massa molestie vitae.</p>
-        <p>In aliquet fringilla libero, quis dapibus massa tincidunt a. Orci varius natoque penatibus et magnus dis parturient montes.</p>
+  <!-- Sección principal con carousel -->
+  <div class="container-fluid text-center titulo mt-4">
+    <h1 class="mb-4">Lorem Ipsum</h1>
+    <div id="carouselFrases" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <h3>El texto “Lorem Ipsum” es un clásico del diseño desde hace siglos.</h3>
+        </div>
+        <div class="carousel-item">
+          <h3>Se utiliza para rellenar espacios en maquetas o prototipos visuales.</h3>
+        </div>
+        <div class="carousel-item">
+          <h3>Su objetivo es simular contenido real sin distraer del diseño.</h3>
+        </div>
       </div>
     </div>
-
   </div>
 
-  <!-- JS de Bootstrap (Popper + Bootstrap) -->
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+  <!-- Contenido principal -->
+  <div class="container d-flex justify-content-center contenidoPrincipal mt-5">
+    <div class="container">
+      <div class="row">
+        <!-- Columna lateral -->
+        <aside class="col-lg-3 col-12 d-flex flex-column align-items-start d-none d-lg-block" id="menuLateral">
+          <a href="#" class="btn btn-outline-secondary w-100 py-3 text-start">Opción 1</a>
+          <a href="#" class="btn btn-outline-secondary w-100 py-3 text-start">Opción 2</a>
+          <a href="#" class="btn btn-outline-secondary w-100 py-3 text-start">Opción 3</a>
+          <a href="#" class="btn btn-outline-secondary w-100 py-3 text-start">Opción 4</a>
+        </aside>
 
-  <!-- Tu script externo de carrusel -->
-  <script src="carrusel.js"></script>
+        <!-- Texto principal -->
+        <section class="col-lg-9 col-12 texto">
+          <div class="text-start">
+            <div class="row mb-3 bg-light p-2">
+              <div class="col-12 col-lg-4 col-md-6">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean suscipit, magna a cursus blandit, justo turpis fermentum justo, sit amet commodo elit urna non enim.</p>
+              </div>
+              <div class="col-12 col-lg-4 col-md-6">
+                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit.</p>
+              </div>
+              <div class="col-12 col-lg-4 col-md-6">
+                <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+              </div>
+            </div>
+
+            <div class="row bg-light mb-3 p-2">
+              <div class="col-12 col-lg-4 col-md-6">
+                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis.</p>
+              </div>
+              <div class="col-12 col-lg-4 col-md-6">
+                <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+              </div>
+              <div class="col-12 col-lg-4 col-md-6">
+                <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt.</p>
+              </div>
+            </div>
+
+            <div class="row mb-3 bg-light p-2">
+              <div class="col-12 col-lg-4 col-md-6">
+                <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.</p>
+              </div>
+              <div class="col-12 col-lg-4 col-md-6">
+                <p>Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus.</p>
+              </div>
+              <div class="col-12 col-lg-4 col-md-6"></div>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS al final del body -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-..." crossorigin="anonymous"></script>
 </body>
 </html>
